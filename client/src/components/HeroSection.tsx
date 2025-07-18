@@ -35,7 +35,7 @@ const HeroSection = () => {
           {/* Subtitle */}
           <div className="hero-fade-in" style={{ animationDelay: '0.2s' }}>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-              منصة تعليمية شاملة لطلاب كلية الملك عبدالله الثاني لتقنية المعلومات
+            منصة تعليمية لطللاب جامعة البترا
               <br />
               احسب معدلك، اكتشف مواد الدراسة، واحصل على اقتراحات ذكية لمسيرتك الأكاديمية
             </p>
