@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Search, Menu, X, Globe, Moon, Sun, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
+import { Link } from 'react-router-dom';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -67,10 +67,12 @@ const Header = () => {
             </Button>
 
             {/* Login Button */}
+            <Link to="/login">
             <Button variant="default" size="sm" className="hidden sm:flex">
               <User className="w-4 h-4 mr-1" />
               تسجيل الدخول
             </Button>
+            </Link>
 
             {/* Mobile Menu Toggle */}
             <Button
@@ -94,10 +96,12 @@ const Header = () => {
               <a href="#ai-assistant" className="py-2 text-foreground hover:text-primary transition-smooth">المساعد الذكي</a>
               <a href="#contact" className="py-2 text-foreground hover:text-primary transition-smooth">التواصل</a>
               <div className="pt-2 border-t">
+                <Link to="/login" className="flex items-center justify-center space-x-2">
                 <Button variant="default" size="sm" className="w-full">
                   <User className="w-4 h-4 mr-1" />
                   تسجيل الدخول
                 </Button>
+                </Link>
               </div>
             </nav>
           </div>

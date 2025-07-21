@@ -53,21 +53,16 @@ const HeroSection = () => {
           </div>
 
           {/* Quick Stats */}
-          <div className="hero-fade-in grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto" style={{ animationDelay: '0.6s' }}>
+          <div className="hero-fade-in grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto" style={{ animationDelay: '0.6s' }}>
             <div className="text-center p-4 bg-card/30 backdrop-blur rounded-xl border shadow-sm">
               <BookOpen className="w-8 h-8 text-primary mx-auto mb-2" />
-              <div className="text-2xl font-bold text-foreground counter-animate">500+</div>
+              <div className="text-2xl font-bold text-foreground counter-animate">300+</div>
               <div className="text-sm text-muted-foreground">مادة دراسية</div>
             </div>
             <div className="text-center p-4 bg-card/30 backdrop-blur rounded-xl border shadow-sm">
               <Calculator className="w-8 h-8 text-secondary mx-auto mb-2" />
               <div className="text-2xl font-bold text-foreground counter-animate">GPA</div>
               <div className="text-sm text-muted-foreground">حاسبة المعدل</div>
-            </div>
-            <div className="text-center p-4 bg-card/30 backdrop-blur rounded-xl border shadow-sm">
-              <Users className="w-8 h-8 text-accent mx-auto mb-2" />
-              <div className="text-2xl font-bold text-foreground counter-animate">50+</div>
-              <div className="text-sm text-muted-foreground">عضو هيئة تدريس</div>
             </div>
             <div className="text-center p-4 bg-card/30 backdrop-blur rounded-xl border shadow-sm">
               <Brain className="w-8 h-8 text-primary mx-auto mb-2" />

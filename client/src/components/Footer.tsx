@@ -34,12 +34,12 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
               <div className="w-12 h-12 gradient-primary rounded-xl flex items-center justify-center text-white font-bold text-xl">
-                UPO
+                UOP
               </div>
               <span className="font-bold text-2xl text-foreground">Student Bag</span>
             </div>
             <p className="text-muted-foreground leading-relaxed mb-6 max-w-md">
-              منصة تعليمية شاملة مصممة خصيصاً لطلاب كلية الملك عبدالله الثاني لتقنية المعلومات. 
+              منصة تعليمية شاملة مصممة خصيصاً لطلاب جامعةالبترا. 
               نسعى لتسهيل رحلتك الأكاديمية من خلال أدوات ذكية ومحتوى عالي الجودة.
             </p>
             
@@ -51,11 +51,11 @@ const Footer = () => {
               </div>
               <div className="flex items-center text-muted-foreground">
                 <Phone className="w-4 h-4 mr-3 text-primary" />
-                <span dir="ltr">+962 6 535 5000</span>
+                <span dir="ltr">+962 798133869</span>
               </div>
               <div className="flex items-center text-muted-foreground">
                 <MapPin className="w-4 h-4 mr-3 text-primary" />
-                <span>الجامعة الأردنية، عمان، الأردن</span>
+                <span>جامعة البترا، عمان، الأردن</span>
               </div>
             </div>
           </div>
