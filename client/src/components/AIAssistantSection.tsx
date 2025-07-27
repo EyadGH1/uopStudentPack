@@ -7,38 +7,16 @@ const AIAssistantSection = () => {
   
   const steps = [
     {
-      title: 'تحليل السجل الأكاديمي',
-      description: 'يقوم المساعد الذكي بتحليل درجاتك ومعدلك التراكمي والمواد المكتملة',
-      icon: BookOpenCheck,
-      color: 'primary'
-    },
-    {
-      title: 'تحديد الأهداف الأكاديمية',
-      description: 'يساعدك في تحديد المعدل المطلوب والتخصص المناسب لمسيرتك المهنية',
-      icon: Target,
-      color: 'secondary'
-    },
-    {
       title: 'اقتراح المواد المثلى',
-      description: 'يقترح أفضل المواد للفصل القادم بناءً على متطلباتك وقدراتك',
+      description: 'بيقترح مواد فصلك الجاي من سجلك الاكاديمي ',
       icon: Brain,
       color: 'accent'
     },
-    {
-      title: 'متابعة التقدم',
-      description: 'يراقب أداءك ويقدم نصائح لتحسين نتائجك الأكاديمية',
-      icon: TrendingUp,
-      color: 'primary'
-    }
   ];
 
   const features = [
-    'تحليل ذكي للسجل الأكاديمي',
     'اقتراحات مخصصة للمواد',
-    'توقع المعدل التراكمي',
-    'تخطيط الجدول الزمني',
     'تحليل صعوبة المواد',
-    'اقتراحات الأساتذة المناسبين'
   ];
 
   const getColorClasses = (color: string) => {
@@ -75,8 +53,7 @@ const AIAssistantSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Side - How it Works */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-top">
           <div>
             <h3 className="text-2xl font-bold text-foreground mb-8">كيف يعمل المساعد الذكي؟</h3>
             

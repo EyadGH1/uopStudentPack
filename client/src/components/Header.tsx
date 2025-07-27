@@ -25,9 +25,9 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#home" className="text-foreground hover:text-primary transition-smooth font-medium">الرئيسية</a>
+            <Link to="/" className="text-foreground hover:text-primary transition-smooth font-medium">الرئيسية</Link>
             <a href="#services" className="text-foreground hover:text-primary transition-smooth font-medium">الخدمات</a>
-            <a href="#materials" className="text-foreground hover:text-primary transition-smooth font-medium">المواد</a>
+            <Link to="materials" className="text-foreground hover:text-primary transition-smooth font-medium">المواد</Link>
             <a href="#ai-assistant" className="text-foreground hover:text-primary transition-smooth font-medium">المساعد الذكي</a>
             <a href="#contact" className="text-foreground hover:text-primary transition-smooth font-medium">التواصل</a>
           </nav>
@@ -90,7 +90,7 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t bg-card">
             <nav className="flex flex-col space-y-3">
-              <a href="#home" className="py-2 text-foreground hover:text-primary transition-smooth">الرئيسية</a>
+              <Link  to="/"  onClick={() => window.location.hash = ''}className="py-2 text-foreground hover:text-primary transition-smooth">الرئيسية</Link>
               <a href="#services" className="py-2 text-foreground hover:text-primary transition-smooth">الخدمات</a>
               <a href="#materials" className="py-2 text-foreground hover:text-primary transition-smooth">المواد</a>
               <a href="#ai-assistant" className="py-2 text-foreground hover:text-primary transition-smooth">المساعد الذكي</a>

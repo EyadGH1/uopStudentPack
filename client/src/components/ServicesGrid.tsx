@@ -1,8 +1,11 @@
 import React from 'react';
-import { Calculator, BookOpen, TreePine, Mail, Brain, BarChart3, ArrowRight } from 'lucide-react';
+import { Calculator, BookOpen, TreePine, Mail, Brain, BarChart3, ArrowRight, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Description } from '@radix-ui/react-toast';
+import { features } from 'process';
 
 const ServicesGrid = () => {
+
   const services = [
     {
       id: 'gpa-calculator',
@@ -10,7 +13,7 @@ const ServicesGrid = () => {
       description: 'احسب معدلك الفصلي والتراكمي بسهولة مع إمكانية التصور البياني للدرجات',
       icon: Calculator,
       color: 'primary',
-      features: ['حساب المعدل الفصلي', 'المعدل التراكمي', 'التصور البياني', 'التنبؤ بالدرجات']
+      features: ['حساب المعدل الفصلي', 'المعدل التراكمي', 'التصور البياني']
     },
     {
       id: 'materials-center',
@@ -21,20 +24,20 @@ const ServicesGrid = () => {
       features: ['ملاحظات الطلاب', 'الكتب المرجعية', 'بنوك الأسئلة', 'اختبارات محوسبة']
     },
     {
+      id : "متوقعة المعدل المستقبلي",
+      title : "متوقعة المعدل المستقبلي",
+      description : 'نتوقع معدلك التراكمي بناء على حسابات احصائية',
+      icon : TrendingUp,
+      color: 'secondary',
+      features : ["تنب} بالمعدل المستقبلي"]
+    },
+    {
       id: 'study-plans',
       title: 'الخطط الدراسية',
       description: 'خطط دراسية تفاعلية بهيكل شجري لجميع تخصصات تقنية المعلومات',
       icon: TreePine,
       color: 'accent',
-      features: ['هيكل شجري تفاعلي', 'جميع التخصصات', 'متطلبات المواد', 'تحميل مباشر']
-    },
-    {
-      id: 'faculty-directory',
-      title: 'دليل أعضاء هيئة التدريس',
-      description: 'دليل شامل لجميع معلومات التواصل مع أعضاء هيئة التدريس مع إمكانية البحث',
-      icon: Mail,
-      color: 'primary',
-      features: ['معلومات التواصل', 'البحث المتقدم', 'ساعات المكتب', 'التخصصات']
+      features: ['جميع التخصصات', 'متطلبات المواد', 'تحميل مباشر']
     },
     {
       id: 'ai-assistant',
@@ -42,17 +45,11 @@ const ServicesGrid = () => {
       description: 'مساعد ذكي يقترح عليك المواد المناسبة للفصل القادم بناءً على سجلك الأكاديمي',
       icon: Brain,
       color: 'gradient',
-      features: ['اقتراحات ذكية', 'تحليل السجل الأكاديمي', 'التخطيط المستقبلي', 'تحسين الأداء']
+      features: ['اقتراحات ذكية', 'التخطيط المستقبلي']
     },
-    {
-      id: 'statistics',
-      title: 'لوحة الإحصائيات',
-      description: 'عدادات ديناميكية تعرض إحصائيات شاملة للمواد والاختبارات والملفات المتاحة',
-      icon: BarChart3,
-      color: 'secondary',
-      features: ['إحصائيات حية', 'رسوم بيانية', 'تتبع التقدم', 'تقارير شاملة']
-    }
   ];
+    const firstRow = services.slice(0, 3);
+const secondRow = services.slice(3);
 
   const getColorClasses = (color: string) => {
     switch (color) {
@@ -98,55 +95,85 @@ const ServicesGrid = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <div
-              key={service.id}
-              className={`service-card p-6 rounded-2xl border bg-gradient-to-br ${getColorClasses(service.color)} shadow-custom hover:shadow-lg transition-all duration-300 group`}
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              {/* Icon */}
-              <div className={`w-16 h-16 rounded-xl bg-card/50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
-                <service.icon className={`w-8 h-8 ${getIconColor(service.color)}`} />
-              </div>
+        <div className="space-y-12">
+  {/* First row with 3 cards */}
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    {firstRow.map((service, index) => (
+      <div
+        key={service.id}
+        className={`service-card p-6 rounded-2xl border bg-gradient-to-br ${getColorClasses(service.color)} shadow-custom hover:shadow-lg transition-all duration-300 group`}
+        style={{ animationDelay: `${index * 0.1}s` }}
+      >
+        <div className="w-16 h-16 rounded-xl bg-card/50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+          <service.icon className={`w-8 h-8 ${getIconColor(service.color)}`} />
+        </div>
 
-              {/* Content */}
-              <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
-                {service.title}
-              </h3>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                {service.description}
-              </p>
+        <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+          {service.title}
+        </h3>
+        <p className="text-muted-foreground mb-6 leading-relaxed">
+          {service.description}
+        </p>
 
-              {/* Features */}
-              <ul className="space-y-2 mb-6">
-                {service.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center text-sm text-muted-foreground">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-
-              {/* Action Button */}
-              <Button 
-                variant="outline" 
-                className="w-full group/btn bg-card/50 hover:bg-card border-border hover:border-primary/40 transition-all"
-              >
-                الوصول للخدمة
-                <ArrowRight className="w-4 h-4 mr-2 group-hover/btn:translate-x-1 transition-transform" />
-              </Button>
-            </div>
+        <ul className="space-y-2 mb-6">
+          {service.features.map((feature, idx) => (
+            <li key={idx} className="flex items-center text-sm text-muted-foreground">
+              <div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>
+              {feature}
+            </li>
           ))}
+        </ul>
+
+        <Button 
+          variant="outline" 
+          className="w-full group/btn bg-card/50 hover:bg-card border-border hover:border-primary/40 transition-all"
+        >
+          الوصول للخدمة
+          <ArrowRight className="w-4 h-4 mr-2 group-hover/btn:translate-x-1 transition-transform" />
+        </Button>
+      </div>
+    ))}
+  </div>
+
+  {/* Second row with 2 cards centered */}
+  <div className="flex justify-center gap-8 flex-wrap">
+    {secondRow.map((service, index) => (
+      <div
+        key={service.id}
+        className={`service-card w-full sm:w-[340px] p-6 rounded-2xl border bg-gradient-to-br ${getColorClasses(service.color)} shadow-custom hover:shadow-lg transition-all duration-300 group`}
+        style={{ animationDelay: `${(index + 3) * 0.1}s` }}
+      >
+        <div className="w-16 h-16 rounded-xl bg-card/50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+          <service.icon className={`w-8 h-8 ${getIconColor(service.color)}`} />
         </div>
 
-        {/* CTA Section */}
-        <div className="text-center mt-16">
-          <Button variant="hero" size="xl" className="shadow-glow">
-            استكشف جميع الخدمات
-            <ArrowRight className="w-5 h-5 mr-2" />
-          </Button>
-        </div>
+        <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+          {service.title}
+        </h3>
+        <p className="text-muted-foreground mb-6 leading-relaxed">
+          {service.description}
+        </p>
+
+        <ul className="space-y-2 mb-6">
+          {service.features.map((feature, idx) => (
+            <li key={idx} className="flex items-center text-sm text-muted-foreground">
+              <div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>
+              {feature}
+            </li>
+          ))}
+        </ul>
+
+        <Button 
+          variant="outline" 
+          className="w-full group/btn bg-card/50 hover:bg-card border-border hover:border-primary/40 transition-all"
+        >
+          الوصول للخدمة
+          <ArrowRight className="w-4 h-4 mr-2 group-hover/btn:translate-x-1 transition-transform" />
+        </Button>
+      </div>
+    ))}
+  </div>
+</div>
       </div>
     </section>
   );

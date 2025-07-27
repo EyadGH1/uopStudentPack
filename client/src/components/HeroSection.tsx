@@ -1,8 +1,8 @@
 import React from 'react';
-import { ArrowRight, BookOpen, Calculator, Users, Brain } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ArrowRight, BookOpen, Calculator, Users, Brain ,TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import heroImage from '@/assets/hero-education.jpg';
-
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-muted/30 to-primary/5">
@@ -43,32 +43,39 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="hero-fade-in flex flex-col sm:flex-row gap-4 justify-center items-center mb-12" style={{ animationDelay: '0.4s' }}>
-            <Button variant="hero" size="xl" className="group">
-              ابدأ رحلتك الأكاديمية
+             <Link to = "/materials"> <Button variant="hero" size="xl" className="group">
+              !شوف شنتة النيرد
               <ArrowRight className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            </Button></Link>
             <Button variant="outline" size="xl" className="bg-card/50 backdrop-blur">
-              استكشف الخدمات
+              مش عارف تختار مواد؟
             </Button>
           </div>
 
           {/* Quick Stats */}
-          <div className="hero-fade-in grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto" style={{ animationDelay: '0.6s' }}>
-            <div className="text-center p-4 bg-card/30 backdrop-blur rounded-xl border shadow-sm">
+          <div className="hero-fade-in grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto" style={{ animationDelay: '0.6s' }}>
+            <Link to="/materials"> <div className="text-center p-4 bg-card/30 backdrop-blur rounded-xl border shadow-sm">
               <BookOpen className="w-8 h-8 text-primary mx-auto mb-2" />
               <div className="text-2xl font-bold text-foreground counter-animate">300+</div>
               <div className="text-sm text-muted-foreground">مادة دراسية</div>
-            </div>
-            <div className="text-center p-4 bg-card/30 backdrop-blur rounded-xl border shadow-sm">
+            </div></Link>
+            <Link to="/gpa" > <div className="text-center p-4 bg-card/30 backdrop-blur rounded-xl border shadow-sm">
               <Calculator className="w-8 h-8 text-secondary mx-auto mb-2" />
               <div className="text-2xl font-bold text-foreground counter-animate">GPA</div>
               <div className="text-sm text-muted-foreground">حاسبة المعدل</div>
-            </div>
+            </div></Link>
             <div className="text-center p-4 bg-card/30 backdrop-blur rounded-xl border shadow-sm">
               <Brain className="w-8 h-8 text-primary mx-auto mb-2" />
               <div className="text-2xl font-bold text-foreground counter-animate">AI</div>
               <div className="text-sm text-muted-foreground">مساعد ذكي</div>
             </div>
+            <Link to="/fgpa" > 
+             <div className="text-center p-4 bg-card/30 backdrop-blur rounded-xl border shadow-sm">
+              <TrendingUp className="w-8 h-8 text-primary mx-auto mb-2" />
+              <div className="text-2xl font-bold text-foreground counter-animate">GPA+</div>
+              <div className="text-sm text-muted-foreground">توقع معدلك</div>
+            </div>
+            </Link>
           </div>
         </div>
       </div>
